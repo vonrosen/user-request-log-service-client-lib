@@ -1,6 +1,7 @@
 package com.hunter.model;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,12 +10,38 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class UserRequestLogView {
 
     private UUID userId;
-    private BigInteger maxPaymentAmountCents;
+    private BigDecimal maxPaymentAmount;
+    private Timestamp created;
+    private Timestamp updated;
+
     public UUID getUserId() {
         return userId;
     }
-    public BigInteger getMaxPaymentAmountCents() {
-        return maxPaymentAmountCents;
+
+    public BigDecimal getMaxPaymentAmount() {
+        return maxPaymentAmount;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
+    }
+
+    public Timestamp getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Timestamp updated) {
+        this.updated = updated;
+    }
+
+    @Override
+    public String toString() {
+        return "userId " + userId.toString() + " maxPaymentAmountCents " + maxPaymentAmount + " created " + created
+                + " updated " + updated;
     }
 
 }
