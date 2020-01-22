@@ -9,39 +9,49 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserRequestLogView {
 
-    private UUID userId;
-    private BigDecimal maxPaymentAmount;
-    private Timestamp created;
-    private Timestamp updated;
+	private UUID userId;
+	private BigDecimal maxPaymentAmount;
+	private Timestamp created;
+	private Timestamp updated;
 
-    public UUID getUserId() {
-        return userId;
-    }
+	public UserRequestLogView() {
+	}
 
-    public BigDecimal getMaxPaymentAmount() {
-        return maxPaymentAmount;
-    }
+	public UserRequestLogView(UUID userId, BigDecimal maxyPaymentAmount, Timestamp created, Timestamp updated) {
+		this.userId = userId;
+		this.maxPaymentAmount = maxyPaymentAmount;
+		this.created = created;
+		this.updated = updated;
+	}
 
-    public Timestamp getCreated() {
-        return created;
-    }
+	public UUID getUserId() {
+		return userId;
+	}
 
-    public void setCreated(Timestamp created) {
-        this.created = created;
-    }
+	public BigDecimal getMaxPaymentAmount() {
+		return maxPaymentAmount;
+	}
 
-    public Timestamp getUpdated() {
-        return updated;
-    }
+	public Timestamp getCreated() {
+		return created;
+	}
 
-    public void setUpdated(Timestamp updated) {
-        this.updated = updated;
-    }
+	public void setCreated(Timestamp created) {
+		this.created = created;
+	}
 
-    @Override
-    public String toString() {
-        return "userId " + userId.toString() + " maxPaymentAmountCents " + maxPaymentAmount + " created " + created
-                + " updated " + updated;
-    }
+	public Timestamp getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(Timestamp updated) {
+		this.updated = updated;
+	}
+
+	@Override
+	public String toString() {
+		return "userId " + userId.toString() + " maxPaymentAmountCents " + maxPaymentAmount + " created " + created
+				+ " updated " + updated;
+	}
 
 }
