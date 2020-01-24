@@ -23,7 +23,7 @@ public class UserRequestLogView {
 		this.created = created;
 		this.updated = updated;
 	}
-
+	
 	public UUID getUserId() {
 		return userId;
 	}
